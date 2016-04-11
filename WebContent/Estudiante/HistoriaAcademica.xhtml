@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions" >
+	  
+<h:head>
+	<f:facet name="first">
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+		<link rel="stylesheet" type="text/css" href="../resources/css/estilos.css"/>
+	</f:facet>
+	
+</h:head> 
+
+<body> 
+    <div id="antorcha"></div>
+	<div id="fondo">
+	<div id="fondo2"></div></div>
+	<div id="fondo3"> </div>
+	
+<p:breadCrumb id="txt">
+    <p:menuitem value="Estudiante" url="#" />
+    <p:menuitem value="Ingenieria de sistemas" url="#" />
+    <p:menuitem value="Materias" url="#" />  
+</p:breadCrumb>
+
+<h:form id="box2"> 
+    <p:splitButton value="Cerrar Sesion" actionListener="#" icon="ui-icon-disk">
+        <p:menuitem value="Cerrar Sesion" actionListener="#" icon="ui-icon-arrowrefresh-1-w" />
+        <p:separator />
+        <p:menuitem value="Cambiar Contraseña" actionListener="#" ajax="false" icon="ui-icon-close" />
+        <p:menuitem value="Ayuda" url="http://www.primefaces.org" icon="ui-icon-extlink" />
+    </p:splitButton>
+</h:form>
+
+<p:panelGrid columns="1" id="menu">
+<h:form>
+	<h:outputLabel id="infoUsuario" value="Menu de Usuario" />
+    <p:growl autoUpdate="true"/>
+    <p:panelMenu style="width:150px ">
+        <p:submenu label="Estudiante">
+        <p:submenu label="Ingenieria de sistemas">
+            <p:menuitem value="Notas" actionListener="#" icon="ui-icon-disk" />
+            <p:menuitem value="Faltas" actionListener="#"  icon="ui-icon-arrowrefresh-1-w" />
+            <p:separator />
+            <p:menuitem value="Historia Academica" actionListener="#"  icon="ui-icon-arrowrefresh-1-w" />
+            <p:menuitem value="Pre-Matricula Academica" actionListener="#"  icon="ui-icon-arrowrefresh-1-w" />
+            <p:menuitem value="Matricula Academica" actionListener="#"  icon="ui-icon-arrowrefresh-1-w" />
+        </p:submenu>
+        </p:submenu>
+    </p:panelMenu>
+</h:form>
+</p:panelGrid>
+
+<div id="datos">
+<p:panelGrid columns="3" id="infoGeneral"> 
+<p:panelGrid columns="1">
+	<f:facet name="header" id="imagenUsuario">
+        <p:graphicImage alt="Imagen de usuario" url="/resources/images/EstaEs.png" width="94px" height="90px"/>
+	</f:facet>
+</p:panelGrid>
+<p:panelGrid columns="2">
+ 
+ 	<h:outputText value="Programa:" />
+    <h:outputText value="Ingenieria de Sistemas" />
+ 
+ 	<h:outputText value="Codigo:" />
+    <h:outputText value="104611010038" />
+    
+    <h:outputText value="Promedio Carrera:" />
+    <h:outputText value="3.4" />
+    
+    <h:outputText value="Promedio Semestre Anterior:" />
+    <h:outputText value="3.9" />
+ 	
+ 	<h:outputText value="Semestre:" />
+    <h:outputText value="9" />
+    
+    <h:outputText value="ID Pensum:" />
+    <h:outputText value="114" />
+    
+</p:panelGrid>
+
+<p:panelGrid columns="2">
+
+    <h:outputText value="Nombre:" />
+    <h:outputText value="Kobe Bryant" />
+ 
+    <h:outputText value="Identificacion:" />
+    <h:outputText value="1061762728" />
+ 
+    <h:outputText value="Tipo de Identificacion:" />
+    <h:outputText value="Cédula" />
+ 
+    <h:outputText value="Municipio de expedicion:" />
+    <h:outputText value="POPAYAN" />
+    
+    <h:outputText value="Fecha de Nacimiento:" />
+    <h:outputText value="1993-09-27" />
+    
+    <h:outputText value="Estado:" />
+    <h:outputText value="ACTIVO" />
+    
+</p:panelGrid>
+</p:panelGrid> 
+
+    <p:dataTable id="Hdatos" var="materia" value="#{historiaAcademicaController.materias}" >
+        <f:facet name="header">
+			<h:outputText value="Historia Academica" />
+		</f:facet>
+ 
+        <p:columnGroup type="header">
+            <p:row>
+                <p:column headerText="Periodo" />
+                <p:column headerText="Id Materia" />
+                <p:column headerText="Materia"/>
+            	<p:column headerText="Creditos"/>
+            	<p:column headerText="Semestre"/>
+            	<p:column headerText="Nota"/>
+            	<p:column headerText="Habilitación"/>
+            	<p:column headerText="Definitiva"/>
+            	<p:column headerText="Tipo"/>
+            </p:row>
+            
+        </p:columnGroup>
+ 
+        <p:column headerText="Periodo">
+            <h:outputText value="#{materia.periodo}" />
+        </p:column>
+        
+	    <p:column headerText="Id_Materia">
+	        <h:outputText value="#{materia.id_materia}" />
+	    </p:column>
+	 
+	    <p:column headerText="Materia">
+	        <h:outputText value="#{materia.materia}" />
+	    </p:column>
+	 
+	    <p:column headerText="Creditos">
+	        <h:outputText value="#{materia.creditos}" />
+	    </p:column>
+	    
+	    <p:column headerText="Semestre">
+	        <h:outputText value="#{materia.semestre}" />
+	    </p:column>
+	    <p:column headerText="Nota">
+	        <h:outputText value="#{materia.nota}" />
+	    </p:column>
+	    
+	    <p:column headerText="Habilitacion">
+	        <h:outputText value="#{materia.habilitacion}" />
+	    </p:column>
+	    
+	    <p:column headerText="Definitiva">
+	        <h:outputText value="#{materia.definitiva}" />
+	    </p:column>
+	    
+	    <p:column headerText="Tipo">
+	        <h:outputText value="#{materia.tipo}" />
+	    </p:column>
+	    
+	    <f:facet name="footer">
+	        El total de materias cursadas es: #{fn:length(historiaAcademicaController.materias)}.
+	    </f:facet>
+    </p:dataTable>
+</div>
+<div id="fondo4"></div>
+</body> 
+</html>

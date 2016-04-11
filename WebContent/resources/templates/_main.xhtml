@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Main Template</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />	
+</h:head>
+<h:body>
+	<header>
+		<div id="escudoUnicauca"></div>
+		<div style="position: absolute; bottom: 0px; right: 10px;">
+			<h:form >
+				<p:commandButton icon="ui-icon-key" value="Cerrar Sesión" ajax="false" action="#{user.cerrarSesion()}" />
+			</h:form>
+		</div>
+		<div class="clear"></div>
+	</header>
+	
+	<div class="container-fluid inner">
+		<div class="row-fluid">
+			<div id="menuAdapt" class="menuAdapt span2">
+				<ui:insert name="menu" />
+			</div>
+			<section id="generalContent" class="span9 contentAdapt">	
+				<!-- START CONTENT -->
+				<ui:insert name="content" />
+				<!-- END CONTENT -->	
+			</section>
+		</div>
+	</div><!-- container -->
+	<footer class="inner"></footer>
+</h:body>
+</html>

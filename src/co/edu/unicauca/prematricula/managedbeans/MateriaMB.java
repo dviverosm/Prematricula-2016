@@ -1,4 +1,4 @@
-package com.unicauca.prematricula.managedbeans;
+package co.edu.unicauca.prematricula.managedbeans;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import com.unicauca.prematricula.entities.*;
-import com.unicauca.prematricula.sessionbeans.*;
 
+import co.edu.unicauca.prematricula.entities.*;
+import co.edu.unicauca.prematricula.sessionbeans.*;
 
-@ManagedBean(name="dtMateria")
+@ManagedBean(name="materiaController")
 @SessionScoped
 public class MateriaMB {
 	

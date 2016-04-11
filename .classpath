@@ -16,25 +16,21 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSF 2.1">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="#system#;jst.jsf"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSTL">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="#system#;jst.jsf"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Oracle">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="#system#;jst.jsf"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PrimeFaces 3.5">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="#system#;jst.jsf"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
