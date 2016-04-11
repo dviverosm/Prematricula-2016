@@ -76,8 +76,12 @@ public class ProcesoPrematriculaMB {
 		}
 	}
 	
-	public void save(){
-		FacesMessage msg = new FacesMessage("Successful", "Welcome :");
+	public String save1(){
+        return "HistoriaAcademica.xhtml?faces-redirect=true";
+	}
+	
+	public void save2(){
+		FacesMessage msg = new FacesMessage("Exito", "Prematricula realizada con éxito");
         FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 	

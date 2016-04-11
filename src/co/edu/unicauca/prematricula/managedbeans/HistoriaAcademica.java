@@ -33,6 +33,4 @@ public class HistoriaAcademica{
         this.service = service;
     }
 	
-    publi
-    
 }

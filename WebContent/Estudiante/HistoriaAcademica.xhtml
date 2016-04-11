@@ -111,9 +111,12 @@
 
 			</p:panelGrid>
 		</p:panelGrid>
-		<br />
-		<br />
-		<p:dataTable id="Hdatos" var="materia"
+		
+		<h:outputText value="  " />
+		
+		<p:dataTable id="Hdatos" var="materia" 
+		scrollable="true"
+		scrollHeight="250"
 			value="#{historiaAcademicaController.materias}">
 
 			<f:facet name="header">

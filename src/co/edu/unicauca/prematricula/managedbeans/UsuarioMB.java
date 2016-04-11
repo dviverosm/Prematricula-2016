@@ -39,7 +39,7 @@ public class UsuarioMB {
 		
 		System.out.println("usuarioController: iniciarSesion");
 		if(service.comprobarCredenciales(usuario)){
-			ruta = "Estudiante/materias_pendientes?faces-redirect=true";
+			ruta = "Estudiante/HistoriaAcademica?faces-redirect=true";
 		}
 		
 		return ruta;

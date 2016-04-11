@@ -48,9 +48,11 @@
 			<p:panelMenu style="width:150px ">
 				<p:submenu label="Estudiante">
 					<p:submenu label="Ingenieria de sistemas">
-						<p:menuitem value="Historia Academica"  url="HistoriaAcademica.xhtml" icon="ui-icon-disk" />
-			            <p:menuitem value="Pensum" url="#"  icon="ui-icon-arrowrefresh-1-w" />
-			            <p:menuitem value="Prematricula" url="ProcesoPrematricula.xhtml"  icon="ui-icon-arrowrefresh-1-w" />
+						<p:menuitem value="Historia Academica"
+							url="HistoriaAcademica.xhtml" icon="ui-icon-disk" />
+						<p:menuitem value="Pensum" url="#" icon="ui-icon-arrowrefresh-1-w" />
+						<p:menuitem value="Prematricula" url="ProcesoPrematricula.xhtml"
+							icon="ui-icon-arrowrefresh-1-w" />
 					</p:submenu>
 				</p:submenu>
 			</p:panelMenu>
@@ -58,7 +60,7 @@
 	</p:panelGrid>
 
 	<div id="datos">
-		
+
 
 		<h:form id="form">
 
@@ -127,13 +129,13 @@
 									<p:outputLabel value="las materias matriculadas son :" />
 								</p>
 
-								<p:dataList var="smateria"
+								<p:dataTable var="smateria"
 									value="#{prematriculaController.materiasSeleccionadas}">
-									<f:facet name="header">
-						            Materias Matriculadas
-						        </f:facet>
-						        #{smateria.materia}
-							</p:dataList>
+									<p:column headerText="Materias matriculadas">
+										<h:outputText value="#{smateria.materia}" />
+									</p:column>
+						      	  
+								</p:dataTable>
 
 
 							</h:panelGrid>
@@ -142,7 +144,9 @@
 						</h:panelGrid>
 
 						<p:commandButton value="Guardar Prematricula"
-							actionListener="#{prematriculaController.save}" update="growl"
+							actionListener="#{prematriculaController.save2}"
+							action="#{prematriculaController.save1()}" 
+							update="growl" 
 							process="@this" />
 					</p:panel>
 				</p:tab>
