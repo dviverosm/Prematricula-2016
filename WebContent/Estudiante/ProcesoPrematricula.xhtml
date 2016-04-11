@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<h:head>
+	<f:facet name="first">
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+		<link rel="stylesheet" type="text/css"
+			href="../resources/css/estilos.css" />
+	</f:facet>
+
+</h:head>
+
+<body>
+	<div id="antorcha"></div>
+	<div id="fondo">
+		<div id="fondo2"></div>
+	</div>
+	<div id="fondo3"></div>
+
+	<p:breadCrumb id="txt">
+		<p:menuitem value="Estudiante" url="#" />
+		<p:menuitem value="Ingenieria de sistemas" url="#" />
+		<p:menuitem value="Materias" url="#" />
+	</p:breadCrumb>
+
+	<h:form id="box2">
+		<p:splitButton value="Cerrar Sesion" actionListener="#"
+			icon="ui-icon-disk">
+			<p:menuitem value="Cerrar Sesion" actionListener="#"
+				icon="ui-icon-arrowrefresh-1-w" />
+			<p:separator />
+			<p:menuitem value="Cambiar Contraseña" actionListener="#"
+				ajax="false" icon="ui-icon-close" />
+			<p:menuitem value="Ayuda" url="http://www.primefaces.org"
+				icon="ui-icon-extlink" />
+		</p:splitButton>
+	</h:form>
+
+	<p:panelGrid columns="1" id="menu">
+		<h:form>
+			<h:outputLabel id="infoUsuario" value="Menu de Usuario" />
+			<p:growl autoUpdate="true" />
+			<p:panelMenu style="width:150px ">
+				<p:submenu label="Estudiante">
+					<p:submenu label="Ingenieria de sistemas">
+						<p:menuitem value="Historia Academica"  url="HistoriaAcademica.xhtml" icon="ui-icon-disk" />
+			            <p:menuitem value="Pensum" url="#"  icon="ui-icon-arrowrefresh-1-w" />
+			            <p:menuitem value="Prematricula" url="ProcesoPrematricula.xhtml"  icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+				</p:submenu>
+			</p:panelMenu>
+		</h:form>
+	</p:panelGrid>
+
+	<div id="datos">
+		
+
+		<h:form id="form">
+
+			<p:growl id="growl" sticky="true" showDetail="true" />
+
+			<h:outputLabel value="Materias Pendientes Semestre: " />
+			<h:outputText value=" 8 " />
+
+			<p:wizard flowListener="#{prematriculaController.onFlowProcess}">
+				<p:tab id="personal" title="Materias Pendientes">
+
+					<p:dataTable id="tblMaterias" var="materia"
+						value="#{prematriculaController.materias}"
+						rowKey="#{materia.id_materia}" style="margin-bottom:0">
+
+						<p:column headerText="Codigo">
+							<h:outputText value="#{materia.id_materia}" />
+						</p:column>
+
+						<p:column headerText="Materia">
+							<p:selectBooleanCheckbox value="#{materia.elegida}">
+								<p:ajax listener="#{prematriculaController.selectMat}"
+									update=":form:tblCreditos" />
+							</p:selectBooleanCheckbox>
+							<h:outputText value="    " />
+							<h:outputText value="#{materia.materia}" />
+						</p:column>
+
+						<p:column headerText="Semestre">
+							<h:outputText value="#{materia.semestre}" />
+						</p:column>
+
+						<p:column headerText="Creditos">
+							<h:outputText value="#{materia.creditos}" />
+						</p:column>
+
+						<p:column headerText="Int. Horaria">
+							<h:outputText value="#{materia.intensidadHoraria}" />
+						</p:column>
+					</p:dataTable>
+
+					<p:dataTable id="tblCreditos" var="creditos"
+						value="#{prematriculaController.totalCreditos}"
+						style="margin-bottom:0">
+
+						<p:column>
+							<h:outputLabel value="Creditos Maximos:" />
+							<h:outputText value="#{creditos.semestre}" />
+						</p:column>
+
+						<p:column>
+							<h:outputLabel value="Creditos Prematriculados:" />
+							<h:outputText value="#{creditos.matriculados}" />
+						</p:column>
+					</p:dataTable>
+
+				</p:tab>
+
+				<p:tab id="confirm" title="Confirmation">
+					<p:panel>
+						<!--header="Confirmation"> -->
+						<h:panelGrid id="confirmation" columns="1" columnClasses="grid">
+
+							<h:panelGrid columns="2" columnClasses="label, value">
+								<p>
+									<p:outputLabel value="las materias matriculadas son :" />
+								</p>
+
+								<p:dataList var="smateria"
+									value="#{prematriculaController.materiasSeleccionadas}">
+									<f:facet name="header">
+						            Materias Matriculadas
+						        </f:facet>
+						        #{smateria.materia}
+							</p:dataList>
+
+
+							</h:panelGrid>
+
+
+						</h:panelGrid>
+
+						<p:commandButton value="Guardar Prematricula"
+							actionListener="#{prematriculaController.save}" update="growl"
+							process="@this" />
+					</p:panel>
+				</p:tab>
+			</p:wizard>
+
+		</h:form>
+
+	</div>
+	<div id="fondo4"></div>
+</body>
+</html>
