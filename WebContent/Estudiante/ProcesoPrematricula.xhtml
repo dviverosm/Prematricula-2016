@@ -65,11 +65,61 @@
 		<h:form id="form">
 
 			<p:growl id="growl" sticky="true" showDetail="true" />
-
+			
 			<h:outputLabel value="Materias Pendientes Semestre: " />
 			<h:outputText value=" 8 " />
 
 			<p:wizard flowListener="#{prematriculaController.onFlowProcess}">
+				<p:tab id="InfoProceso" title="Lee atentamente">
+				
+					<p:layout style="min-width:380px;min-height:350px; ">
+						<p:layoutUnit position="west" resizable="true" size="670">
+						
+							<h2>Aspectos a tener en cuenta <br /><br /></h2>
+							<p><b>1.</b> Este software es para uso estudiantil y para disminuir la
+								problematica de cupos, hacer uso razonable y responsable del
+								mismo.<br /><br />
+							</p>
+
+							<p>	<b>2.</b> llenar los campos requeridos para la prematricula con
+								informción veridica y con la mayor sinceridad posible.<br />
+								<br />
+							</p>
+
+							<p>	<b>3.</b> si va a presentar curso de verano seleccione la materia a la
+								cual va a presentar el curso, abstenerse de pre-matricular la
+								materia siguiente dado que no se sabe si va a aprobar o reprobar
+								dicha materia.<br />
+								<br />
+							</p>
+
+							<p><b>4.</b> tener en cuenta el numero de creditos requeridos.<br />
+								<br />
+							</p>
+						</p:layoutUnit>
+
+						<p:layoutUnit position="center" 		>
+							<h2>Pasos del Proceso<br /><br /></h2>
+
+							<p>
+								<b>1. </b>Seleccione las opcines de materias a cursar<br />
+								 el proximo	semestre.<br /><br />
+							</p>
+
+							<p>
+								<b>2. </b>Clickear la opcion "Guardar" para agregar<br />
+								 un cupo a las materias.<br /><br />
+							</p>
+							<p>	<b>3. </b>Confirmar las materias seleccionadas <br />
+							     o editar su proceso de matricula.<br /><br />
+							</p>
+
+						</p:layoutUnit>
+					</p:layout>
+
+
+				</p:tab>
+
 				<p:tab id="personal" title="Materias Pendientes">
 
 					<p:dataTable id="tblMaterias" var="materia"
@@ -134,7 +184,7 @@
 									<p:column headerText="Materias matriculadas">
 										<h:outputText value="#{smateria.materia}" />
 									</p:column>
-						      	  
+
 								</p:dataTable>
 
 
@@ -145,8 +195,7 @@
 
 						<p:commandButton value="Guardar Prematricula"
 							actionListener="#{prematriculaController.save2}"
-							action="#{prematriculaController.save1()}" 
-							update="growl" 
+							action="#{prematriculaController.save1()}" update="growl"
 							process="@this" />
 					</p:panel>
 				</p:tab>
