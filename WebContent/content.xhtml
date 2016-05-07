@@ -9,22 +9,20 @@
 </h:head>
 <h:body>
 	<p:panel id="panelMainEvaluacionDocente">
+			<!--
 			<div class="container-fluid">	
 				<div class="row-fluid">
-					<h3 style="color:#071CBB ">Configuración de Evaluación Docente</h3>
-					<h4 style="color:#071CBB ">Facultad de Ingeniería Electrónica y Telecomunicaciones</h4>
-					<h4 style="color:#071CBB ">Departamento de Sistemas</h4>
+					<h3 style="color:#071CBB ">Sistema de Prematricula</h3>
+					<h4 style="color:#071CBB ">Universidad del Cauca</h4>
 					<p:separator/>
-					<p:outputPanel>
-						<h:outputText value="#{evaluacionDocenteControl.nombreUsuario(evaluacionDocenteControl.idJefe)}" style="width:500px;"/>
-					</p:outputPanel>
 				</div>
-			</div>
-			<div class="container-fluid">
+			</div> 
+			 -->
+			<div class="container-fluid" style="margin-top: 30px;">
 				<div class="row-fluid">
 					<p:outputPanel id="panelContentEvaluacionDocente">
 						<p:outputPanel>
-							<ui:include src="#{evaluacionDocenteControl.ruta}" />
+							<ui:include src="#{prematriculaController.ruta}" />
 						</p:outputPanel>
 					</p:outputPanel>
 

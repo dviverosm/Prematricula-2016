@@ -16,187 +16,142 @@
 </h:head>
 
 <body>
-	<div id="antorcha"></div>
-	<div id="fondo">
-		<div id="fondo2"></div>
-	</div>
-	<div id="fondo3"></div>
-
-	<p:breadCrumb id="txt">
-		<p:menuitem value="Estudiante" url="#" />
-		<p:menuitem value="Ingenieria de sistemas" url="#" />
-		<p:menuitem value="Materias" url="#" />
-	</p:breadCrumb>
-
-	<h:form id="box2">
-		<p:splitButton value="Cerrar Sesion" actionListener="#"
-			icon="ui-icon-disk">
-			<p:menuitem value="Cerrar Sesion" actionListener="#"
-				icon="ui-icon-arrowrefresh-1-w" />
-			<p:separator />
-			<p:menuitem value="Cambiar Contraseña" actionListener="#"
-				ajax="false" icon="ui-icon-close" />
-			<p:menuitem value="Ayuda" url="http://www.primefaces.org"
-				icon="ui-icon-extlink" />
-		</p:splitButton>
-	</h:form>
-
-	<p:panelGrid columns="1" id="menu">
-		<h:form>
-			<h:outputLabel id="infoUsuario" value="Menu de Usuario" />
-			<p:growl autoUpdate="true" />
-			<p:panelMenu style="width:150px ">
-				<p:submenu label="Estudiante">
-					<p:submenu label="Ingenieria de sistemas">
-						<p:menuitem value="Historia Academica"
-							url="HistoriaAcademica.xhtml" icon="ui-icon-disk" />
-						<p:menuitem value="Pensum" url="#" icon="ui-icon-arrowrefresh-1-w" />
-						<p:menuitem value="Prematricula" url="ProcesoPrematricula.xhtml"
-							icon="ui-icon-arrowrefresh-1-w" />
-					</p:submenu>
-				</p:submenu>
-			</p:panelMenu>
-		</h:form>
-	</p:panelGrid>
-
 	<div id="datos">
-
 
 		<h:form id="form">
 
 			<p:growl id="growl" sticky="true" showDetail="true" />
 			
-			<h:outputLabel value="Materias Pendientes Semestre: " />
-			<h:outputText value=" 8 " />
 
-			<p:wizard flowListener="#{prematriculaController.onFlowProcess}">
+			<p:wizard flowListener="#{prematriculaController.onFlowProcess}"
+					nextLabel="Siguiente" backLabel="Atras">
+					
 				<p:tab id="InfoProceso" title="Lee atentamente">
-				
-					<p:layout style="min-width:380px;min-height:350px; ">
-						<p:layoutUnit position="west" resizable="true" size="670">
-						
-							<h2>Aspectos a tener en cuenta <br /><br /></h2>
-							<p><b>1.</b> Este software es para uso estudiantil y para disminuir la
+					
+					<h:panelGrid columns="2">
+						<p:panel >
+							<h3>Aspectos a tener en cuenta</h3>
+							<p style="text-align: justify;">
+								<b>1.</b> Este software es para uso estudiantil y para disminuir la
 								problematica de cupos, hacer uso razonable y responsable del
-								mismo.<br /><br />
+								mismo.
 							</p>
 
-							<p>	<b>2.</b> llenar los campos requeridos para la prematricula con
-								informción veridica y con la mayor sinceridad posible.<br />
-								<br />
+							<p style="text-align: justify;">	
+								<b>2.</b> Llenar los campos requeridos para la prematricula con
+								informción veridica y con la mayor sinceridad posible.
 							</p>
 
-							<p>	<b>3.</b> si va a presentar curso de verano seleccione la materia a la
+							<p style="text-align: justify;">	
+								<b>3.</b> Si va a presentar curso de verano seleccione la materia a la
 								cual va a presentar el curso, abstenerse de pre-matricular la
 								materia siguiente dado que no se sabe si va a aprobar o reprobar
-								dicha materia.<br />
-								<br />
+								dicha materia.
+							</p>
+							
+							<p style="text-align: justify;">
+								<b>4.</b> Tener en cuenta el numero de creditos requeridos.
+							</p>
+						</p:panel>
+						
+						<p:panel>
+							
+							<h3>Pasos del Proceso</h3>
+
+							<p style="text-align: justify;">
+								<b>1. </b>Seleccione las opcines de materias a cursar el proximo	semestre.
 							</p>
 
-							<p><b>4.</b> tener en cuenta el numero de creditos requeridos.<br />
-								<br />
+							<p style="text-align: justify;">
+								<b>2. </b>Clickear la opcion "Guardar" para agregar un cupo a las materias.
 							</p>
-						</p:layoutUnit>
-
-						<p:layoutUnit position="center" 		>
-							<h2>Pasos del Proceso<br /><br /></h2>
-
-							<p>
-								<b>1. </b>Seleccione las opcines de materias a cursar<br />
-								 el proximo	semestre.<br /><br />
+							<p style="text-align: justify;">	
+								<b>3. </b>Confirmar las materias seleccionadas o editar su proceso de matricula.
 							</p>
-
-							<p>
-								<b>2. </b>Clickear la opcion "Guardar" para agregar<br />
-								 un cupo a las materias.<br /><br />
-							</p>
-							<p>	<b>3. </b>Confirmar las materias seleccionadas <br />
-							     o editar su proceso de matricula.<br /><br />
-							</p>
-
-						</p:layoutUnit>
-					</p:layout>
-
-
+						</p:panel>
+					</h:panelGrid>
 				</p:tab>
-
+				
 				<p:tab id="personal" title="Materias Pendientes">
-
-					<p:dataTable id="tblMaterias" var="materia"
-						value="#{prematriculaController.materias}"
-						rowKey="#{materia.id_materia}" style="margin-bottom:0">
-
-						<p:column headerText="Codigo">
-							<h:outputText value="#{materia.id_materia}" />
-						</p:column>
-
-						<p:column headerText="Materia">
-							<p:selectBooleanCheckbox value="#{materia.elegida}">
-								<p:ajax listener="#{prematriculaController.selectMat}"
-									update=":form:tblCreditos" />
-							</p:selectBooleanCheckbox>
-							<h:outputText value="    " />
-							<h:outputText value="#{materia.materia}" />
-						</p:column>
-
-						<p:column headerText="Semestre">
-							<h:outputText value="#{materia.semestre}" />
-						</p:column>
-
-						<p:column headerText="Creditos">
-							<h:outputText value="#{materia.creditos}" />
-						</p:column>
-
-						<p:column headerText="Int. Horaria">
-							<h:outputText value="#{materia.intensidadHoraria}" />
-						</p:column>
-					</p:dataTable>
-
-					<p:dataTable id="tblCreditos" var="creditos"
-						value="#{prematriculaController.totalCreditos}"
-						style="margin-bottom:0">
-
-						<p:column>
-							<h:outputLabel value="Creditos Maximos:" />
-							<h:outputText value="#{creditos.semestre}" />
-						</p:column>
-
-						<p:column>
-							<h:outputLabel value="Creditos Prematriculados:" />
-							<h:outputText value="#{creditos.matriculados}" />
-						</p:column>
-					</p:dataTable>
-
+					
+					<div style="text-align: center; margin-top: 20px">
+						<p:dataTable value="#{prematriculaController.materias_prematricula}" var="materia"
+									widgetVar="materiasTable" emptyMessage="No se encontraron materias"
+									filteredValue="#{prematriculaController.filteredMaterias}"
+									selection="#{prematriculaController.materiasSeleccionadas}"
+									rowKey="#{materia.codigo}" scrollable="true" scrollHeight="250">
+							<f:facet name="header">
+								<h:outputText value="Si lo desea, puede usar los filtros por nombre de materia y semestre" />
+							</f:facet>
+							<p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+							
+							<p:column headerText="Codigo" width="40">
+								<h:outputText value="#{materia.codigo}" />
+							</p:column>
+	
+							<p:column filterBy="#{materia.nombre}" headerText="Materia" 
+									filterMatchMode="contains" 
+									filterStyle="width: 400px; text-align: center; background: white !important;">
+								<div style="text-align: left;">
+									<h:outputText value="#{materia.nombre}" />
+								</div>
+							</p:column>
+	
+							<p:column filterBy="#{materia.semestre}" headerText="Semestre" 
+									filterMatchMode="contains" width="80" 
+									filterStyle="width: 40px; text-align: center; background: white !important;">
+								<h:outputText value="#{materia.semestre}" />
+							</p:column>
+	
+							<p:column headerText="Creditos" width="50">
+								<h:outputText value="#{materia.creditos}" />
+							</p:column>
+							
+						</p:dataTable>
+						
+					</div>
+					
+					<p:separator />
+					
 				</p:tab>
 
-				<p:tab id="confirm" title="Confirmation">
+				<p:tab id="confirm" title="Confirmación">
 					<p:panel>
-						<!--header="Confirmation"> -->
-						<h:panelGrid id="confirmation" columns="1" columnClasses="grid">
-
-							<h:panelGrid columns="2" columnClasses="label, value">
-								<p>
-									<p:outputLabel value="las materias matriculadas son :" />
-								</p>
-
-								<p:dataTable var="smateria"
-									value="#{prematriculaController.materiasSeleccionadas}">
-									<p:column headerText="Materias matriculadas">
-										<h:outputText value="#{smateria.materia}" />
-									</p:column>
-
-								</p:dataTable>
-
-
-							</h:panelGrid>
-
-
+						
+						<h4>Este es un resumen de las materias que selccionaste</h4>
+						
+						<h:panelGrid id="confirmContent" columns="2" style="width: 100%">
+							
+							<p:dataTable var="smateria"
+								value="#{prematriculaController.materiasSeleccionadas}"
+								emptyMessage="No has seleccionado ninguna materia" style="max-width: 500px">
+								
+								<p:column headerText="Semestre" width="60">
+									<div style="text-align: center;">
+										<h:outputText value="#{smateria.semestre}" />
+									</div>
+								</p:column>
+								
+								<p:column headerText="Materia">
+									<h:outputText value="#{smateria.nombre}" />
+								</p:column>
+								
+							</p:dataTable>
+							
+							<h:outputText value="" />
+							<h:outputText escape="false" value="Si esta seguro de su prematricula presione el boton 
+								&lt;b&gt;&quot;Guardar Prematricula&quot;&lt;/b&gt; para terminar,&lt;/br&gt;  
+								de lo contrario presione el boton 
+								&lt;b&gt;&quot;Atras&quot;&lt;/b&gt; para editar su prematricula"
+								style="font-size: 14px"/>
+							
+							<p:commandButton value="Guardar Prematricula" ajax="false"
+								actionListener="#{prematriculaController.save2()}"
+								action="#{prematriculaController.save1()}" update="growl"
+								process="@this" style="float: right"/>
+																								
 						</h:panelGrid>
-
-						<p:commandButton value="Guardar Prematricula"
-							actionListener="#{prematriculaController.save2}"
-							action="#{prematriculaController.save1()}" update="growl"
-							process="@this" />
+						
 					</p:panel>
 				</p:tab>
 			</p:wizard>

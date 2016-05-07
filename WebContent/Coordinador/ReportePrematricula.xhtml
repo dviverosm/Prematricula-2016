@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"> 
+
+<h:head>
+	<f:facet name="first">
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+		<link rel="stylesheet" type="text/css"
+			href="../resources/css/estilos.css" />
+	</f:facet>
+</h:head> 
+<body> 
+	<h:form id="form">	
+			<div style="text-align: center;">
+				<p:dataTable id="Hdatos" var="materia" scrollable="true" scrollHeight="300" resizableColumns="true" 
+					value="#{prematriculaController.materiasReporte}" >
+		
+					<f:facet name="header">
+						Informe
+					</f:facet>
+					
+		
+					<p:column headerText="Codigo" width="50">
+						<h:outputText value="#{materia.codigo}" />
+					</p:column>
+		
+					<p:column headerText="Materia">
+						<div style="text-align: left;">
+							<h:outputText value="#{materia.nombre}" />
+						</div>
+					</p:column>
+		
+					<p:column headerText="Semestre" width="80">
+						<h:outputText value="#{materia.semestre}" />
+					</p:column>
+						
+					<p:column headerText="Numero de Cupos" width="100">
+						<h:outputText value="#{materia.estudiantes}" />
+					</p:column>
+		
+					<!--  <f:facet name="footer">
+			        	El total de materias es: #{fn:length(prematriculaController.materias_prematricula)}
+			    	</f:facet>-->
+				</p:dataTable>
+			</div>
+	</h:form>
+</body> 
+</html>

@@ -16,152 +16,106 @@
 </h:head>
 
 <body>
-	<div id="antorcha"></div>
-	<div id="fondo">
-		<div id="fondo2"></div>
-	</div>
-	<div id="fondo3"></div>
-
-	<p:breadCrumb id="txt">
-		<p:menuitem value="Estudiante" url="#" />
-		<p:menuitem value="Ingenieria de sistemas" url="#" />
-		<p:menuitem value="Materias" url="#" />
-	</p:breadCrumb>
-
-	<h:form id="box2">
-		<p:splitButton value="Cerrar Sesion" actionListener="#"
-			icon="ui-icon-disk">
-			<p:menuitem value="Cerrar Sesion" actionListener="#"
-				icon="ui-icon-arrowrefresh-1-w" />
-			<p:separator />
-			<p:menuitem value="Cambiar Contraseña" actionListener="#"
-				ajax="false" icon="ui-icon-close" />
-			<p:menuitem value="Ayuda" url="http://www.primefaces.org"
-				icon="ui-icon-extlink" />
-		</p:splitButton>
-	</h:form>
-
-	<p:panelGrid columns="1" id="menu">
-		<h:form>
-			<h:outputLabel id="infoUsuario" value="Menu de Usuario" />
-			<p:growl autoUpdate="true" />
-			<p:panelMenu style="width:150px ">
-				<p:submenu label="Estudiante">
-					<p:submenu label="Ingenieria de sistemas">
-						<p:menuitem value="Historia Academica"
-							url="HistoriaAcademica.xhtml" icon="ui-icon-disk" />
-						<p:menuitem value="Pensum" url="#" icon="ui-icon-arrowrefresh-1-w" />
-						<p:menuitem value="Prematricula" url="ProcesoPrematricula.xhtml"
-							icon="ui-icon-arrowrefresh-1-w" />
-					</p:submenu>
-				</p:submenu>
-			</p:panelMenu>
-		</h:form>
-	</p:panelGrid>
 
 	<div id="datos">
-		<p:panelGrid columns="3" id="infoGeneral">
-			<p:panelGrid columns="1">
-				<f:facet name="header" id="imagenUsuario">
-					<p:graphicImage alt="Imagen de usuario"
-						url="/resources/images/EstaEs.png" width="94px" height="90px" />
-				</f:facet>
-			</p:panelGrid>
-			<p:panelGrid columns="2">
-
-				<h:outputText value="Programa:" />
-				<h:outputText value="Ingenieria de Sistemas" />
-
-				<h:outputText value="Codigo:" />
-				<h:outputText value="104611010038" />
-
-				<h:outputText value="Promedio Carrera:" />
-				<h:outputText value="3.4" />
-
-				<h:outputText value="Promedio Semestre Anterior:" />
-				<h:outputText value="3.9" />
-
-				<h:outputText value="Semestre:" />
-				<h:outputText value="9" />
-
-				<h:outputText value="ID Pensum:" />
-				<h:outputText value="114" />
-
-			</p:panelGrid>
-
-			<p:panelGrid columns="2">
+		<p:panelGrid columns="3" id="infoGeneral" style="width: 100%;">
+			
+			<p:graphicImage alt="Imagen de usuario"
+							url="#{prematriculaController.usuario.foto}" 
+							width="94px" height="90px" 
+							style="display: block; margin-left: auto; margin-right: auto"/>
+			
+			<p:panelGrid columns="2" style="width: 100%; text-align: center;">
 
 				<h:outputText value="Nombre:" />
-				<h:outputText value="Kobe Bryant" />
+				<h:outputText value="#{prematriculaController.usuario.nombre}" />
 
 				<h:outputText value="Identificacion:" />
-				<h:outputText value="1061762728" />
+				<h:outputText value="#{prematriculaController.usuario.documento}" />
 
 				<h:outputText value="Tipo de Identificacion:" />
-				<h:outputText value="Cédula" />
-
-				<h:outputText value="Municipio de expedicion:" />
-				<h:outputText value="POPAYAN" />
+				<h:outputText value="#{prematriculaController.usuario.tipoDocumento}" />
 
 				<h:outputText value="Fecha de Nacimiento:" />
-				<h:outputText value="1993-09-27" />
+				<h:outputText value="#{prematriculaController.usuario.fechaNacimiento}" />
 
-				<h:outputText value="Estado:" />
-				<h:outputText value="ACTIVO" />
+				
 
 			</p:panelGrid>
+			
+			<p:panelGrid columns="2" style="width: 100%; text-align: center;">
+
+				<h:outputText value="Programa:" />
+				<h:outputText value="#{prematriculaController.usuario.programa}" />
+
+				<h:outputText value="Codigo:" />
+				<h:outputText value="#{prematriculaController.usuario.codigo}" />
+				
+				<h:outputText value="ID Pensum:" />
+				<h:outputText value="114" />
+				
+				<h:outputText value="Estado:" />
+				<h:outputText value="#{prematriculaController.usuario.estado}" />
+
+				
+
+			</p:panelGrid>
+			
 		</p:panelGrid>
 		
-		<h:outputText value="  " />
+		<p:separator/>
 		
-		<p:dataTable id="Hdatos" var="materia" 
-		scrollable="true"
-		scrollHeight="250"
-			value="#{historiaAcademicaController.materias}">
+	</div>
+	
+	<div style="text-align: center;">
+		<p:dataTable id="Hdatos" var="materia" scrollable="true"
+			scrollHeight="250" value="#{prematriculaController.materias_historia}"
+			resizableColumns="true">
 
 			<f:facet name="header">
 				<h:outputText value="Historia Academica" />
 			</f:facet>
-			
 
-			<p:column headerText="Periodo">
-				<h:outputText value="#{materia.periodo}" />
+			<p:column headerText="Periodo" width="40" >
+				<h:outputText value="#{materia.periodoAprobada}"/>
 			</p:column>
 
-			<p:column headerText="Id_Materia">
-				<h:outputText value="#{materia.id_materia}" />
+			<p:column headerText="Id_Materia" width="60">
+				<h:outputText value="#{materia.codigo}"/>
 			</p:column>
 
 			<p:column headerText="Materia">
-				<h:outputText value="#{materia.materia}" />
+				<div style="text-align: left;">
+					<h:outputText value="#{materia.nombre}" />
+				</div>
 			</p:column>
 
-			<p:column headerText="Creditos">
+			<p:column headerText="Creditos" width="45">
 				<h:outputText value="#{materia.creditos}" />
 			</p:column>
 
-			<p:column headerText="Semestre">
+			<p:column headerText="Semestre" width="55">
 				<h:outputText value="#{materia.semestre}" />
 			</p:column>
-			<p:column headerText="Nota">
+			<p:column headerText="Nota" width="30" >
 				<h:outputText value="#{materia.nota}" />
 			</p:column>
 
-			<p:column headerText="Habilitacion">
+			<p:column headerText="Habilitacion" width="65">
 				<h:outputText value="#{materia.habilitacion}" />
 			</p:column>
 
-			<p:column headerText="Definitiva">
+			<p:column headerText="Definitiva" width="45">
 				<h:outputText value="#{materia.definitiva}" />
 			</p:column>
 
-			<p:column headerText="Tipo">
-				<h:outputText value="#{materia.tipo}" />
+			<p:column headerText="Tipo" width="85">
+				<h:outputText value="#{materia.tipoAprobada}" />
 			</p:column>
 
 			<f:facet name="footer">
-	        El total de materias cursadas es: #{fn:length(historiaAcademicaController.materias)}.
-	    </f:facet>
+	       		El total de materias cursadas es: #{fn:length(prematriculaController.materias_historia)}.
+	    	</f:facet>
 		</p:dataTable>
 	</div>
 	<div id="fondo4"></div>

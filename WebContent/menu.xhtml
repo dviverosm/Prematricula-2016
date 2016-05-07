@@ -14,18 +14,17 @@
 	
 	<div class="ui-messages-info ui-corner-all" id="menuTitle">
 		<h:form id="formMenu">
-			<p:accordionPanel>
-				<p:tab title="Programa">
-					<p:commandButton value="Historia Academica" icon="ui-icon-disk" />
-				</p:tab>
-			</p:accordionPanel>
+			<p:growl id="messages" showDetail="true"/>
+			
+			<p:tieredMenu>
+				<p:menuitem value="Historia academica" icon="fa fa-book" ajax="false"
+						action="#{prematriculaController.goToHistoriaAcademica()}"/>
+				<p:menuitem value="Prematricula" icon="fa fa-edit" ajax="false"
+						action="#{prematriculaController.goToPrematricula()}"/>
+				<p:menuitem value="Plan de estudios" icon="fa fa-mortar-board"/>
+			</p:tieredMenu>
+		
 		</h:form>
-	</div>
-	
-	
-	
-	<div class="ui-messages-error ui-corner-all" id="menuTitle" style="#{user.notificar}">
-		<span class="ui-messages-eror-detail"><b>Usted tiene evaluaciones pendientes.</b></span>
 	</div>
 	
 </h:body>
