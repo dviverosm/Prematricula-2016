@@ -37,10 +37,5 @@
 			<attribute name="owner.project.facets" value="jst.jsf;#system#"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Gson">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

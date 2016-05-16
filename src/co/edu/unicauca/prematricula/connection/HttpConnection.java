@@ -14,7 +14,8 @@ public class HttpConnection {
 	private String urlBase;
 	
 	public HttpConnection(){
-		urlBase = "http://localhost/SimcaTest/public/index.php/";
+		//urlBase = "http://localhost/SimcaTest/public/index.php/";
+		urlBase = "http://servidorinnova.cloudapp.net/SimcaTest/public/index.php/";
 	}
 	
 	public String getUrlBase() {
