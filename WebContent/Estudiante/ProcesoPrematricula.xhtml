@@ -23,7 +23,7 @@
 			<p:growl id="growl" sticky="true" showDetail="true" />
 			
 
-			<p:wizard flowListener="#{prematriculaController.onFlowProcess()}"
+			<p:wizard flowListener="#{prematriculaController.onFlowProcess}"
 					nextLabel="Siguiente" backLabel="Atras">
 					
 				<p:tab id="InfoProceso" title="Lee atentamente">
@@ -79,7 +79,9 @@
 									widgetVar="materiasTable" emptyMessage="No se encontraron materias"
 									filteredValue="#{prematriculaController.filteredMaterias}"
 									selection="#{prematriculaController.materiasSeleccionadas}"
-									rowKey="#{materia.codigo}" scrollable="true" scrollHeight="250">
+									rowKey="#{materia.codigo}" paginator="true" rows="15"
+									paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+									rowsPerPageTemplate="15,30,45">
 							<f:facet name="header">
 								<h:outputText value="Si lo desea, puede usar los filtros por nombre de materia y semestre" />
 							</f:facet>
