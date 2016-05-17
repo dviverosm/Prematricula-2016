@@ -120,7 +120,7 @@ public class PrematriculaController {
 		materiasSeleccionadas = new ArrayList<MateriaEntity>();
 		usuario = new UsuarioEntity();
 		estadoPrematricula = true;
-		materiasReporte = service_reporte.getReporte();
+		//materiasReporte = service_reporte.getReporte();
 	}
 	
 	/*Metodos de Redireccion*/

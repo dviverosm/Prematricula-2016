@@ -17,6 +17,7 @@ public class ReporteService {
 		PrematriculaNet prematriculaNet = new PrematriculaNet();
 		List<PrematriculaEntity> result = new ArrayList<PrematriculaEntity>();
 		List<PrematriculaEntity> data = prematriculaNet.getMateriasReporte();
+		
 		result.add(data.get(0));
 		for (PrematriculaEntity d : data) {
 			boolean flag = false;

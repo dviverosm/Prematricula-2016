@@ -3,7 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://www.primefaces.org/ui"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
 <h:head>
@@ -23,7 +23,7 @@
 			<p:growl id="growl" sticky="true" showDetail="true" />
 			
 
-			<p:wizard flowListener="#{prematriculaController.onFlowProcess}"
+			<p:wizard flowListener="#{prematriculaController.onFlowProcess()}"
 					nextLabel="Siguiente" backLabel="Atras">
 					
 				<p:tab id="InfoProceso" title="Lee atentamente">
