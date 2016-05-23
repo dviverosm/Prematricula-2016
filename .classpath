@@ -34,7 +34,11 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PrimeFaces 3.5">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="jst.jsf;#system#"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jota/Downloads/Proyecto2_Grupo3_EntregaFinal/Proyecto2_Grupo3_EntregaFinal/codigoFuente/EvaluacionDocente/WebContent/WEB-INF/lib/poi-3.13-20150929.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>

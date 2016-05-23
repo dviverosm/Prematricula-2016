@@ -22,16 +22,16 @@
 					<f:facet name="header">
 						Informe
 					</f:facet>
-					
+					      
 		
 					<p:column headerText="Codigo" width="50">
 						<h:outputText value="#{materia.codigo}" />
 					</p:column>
 		
 					<p:column headerText="Materia">
-						<div style="text-align: left;">
+						
 							<h:outputText value="#{materia.nombre}" />
-						</div>
+						
 					</p:column>
 		
 					<p:column headerText="Semestre" width="80">
@@ -42,11 +42,24 @@
 						<h:outputText value="#{materia.estudiantes}" />
 					</p:column>
 		
-					<!--  <f:facet name="footer">
-			        	El total de materias es: #{fn:length(prematriculaController.materias_prematricula)}
-			    	</f:facet>-->
+				 <f:facet name="footer">
+			        		<!-- El total de materias es: #{fn:length(prematriculaController.materias_prematricula)}-->
+			    	</f:facet>
 				</p:dataTable>
+				 <h3>Exportar datos</h3>
+                 
+                  <h:commandLink>
+                    <!--  <p:graphicImage value="http://hospitaldeconcordia.gov.co/wp-content/uploads/2015/08/excel-icon.png" /> -->
+                      <p:graphicImage value="/resources/images/excel2.png" />
+                     <p:dataExporter type="xls"  target="Hdatos" fileName="myexcel" />
+                   </h:commandLink>
+          			  <h:commandLink>
+                     <p:graphicImage value="/resources/images/pdf.png" />
+                     <p:dataExporter type="pdf"  target="Hdatos" fileName="myexcel" />
+                   </h:commandLink>
+                 
 			</div>
+			
 	</h:form>
 </body> 
 </html>

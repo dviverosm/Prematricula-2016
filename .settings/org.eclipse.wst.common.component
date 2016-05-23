@@ -2,6 +2,9 @@
     <wb-module deploy-name="SistemaPrematriculaUnicauca">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="iText-2.1.7.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jota/Desktop/itext-2.1.7/iText-2.1.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/SistemaPrematriculaUnicauca/build/classes"/>
         <property name="context-root" value="SistemaPrematriculaUnicauca"/>
     </wb-module>

@@ -120,7 +120,7 @@ public class PrematriculaController {
 		materiasSeleccionadas = new ArrayList<MateriaEntity>();
 		usuario = new UsuarioEntity();
 		estadoPrematricula = true;
-		//materiasReporte = service_reporte.getReporte();
+		materiasReporte = service_reporte.getReporte();
 	}
 	
 	/*Metodos de Redireccion*/
@@ -162,12 +162,13 @@ public class PrematriculaController {
 
 	/*Metodos de Inicio de Sesion*/
 	public String iniciarSesion(){
-		String ruta = "index";
 		
+		String ruta = "index";		
 		UsuarioEntity usu = service_session.getUsuario(usuario.getUsername(), usuario.getPassword());
 		if(service_session.comprobarCredenciales(usu)){
 			usuario = usu;
 			if(usuario.getPrivilegio().equals("Estudiante")){
+				
 				this.ruta = "/Estudiante/HistoriaAcademica.xhtml";
 			}else{
 				this.ruta = "/Coordinador/ReportePrematricula.xhtml";
