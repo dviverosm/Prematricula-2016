@@ -1,0 +1,29 @@
+body {
+	background: url("../images/background.png") no-repeat;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+	background-position: center center;
+	font-family: "Vegur", "Arial Narrow", Arial, sans-serif !important;
+}
+#escudoUnicauca {
+	width: cover;
+	height: 90px;
+	background: url("../images/logo2.png") no-repeat;
+	background-repeat: no-repeat;	
+	background-position: center;	
+	margin-top: 60px;
+}
+#fuente{
+	width: 200px;
+	color: white;
+	font-size: large;
+	margin-left: 45%;
+	margin-top: 20px;		
+}
+#fondoh2{
+	background: url("../images/antorcha.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 550px;	
+}

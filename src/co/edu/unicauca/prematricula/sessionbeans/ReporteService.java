@@ -1,6 +1,7 @@
 package co.edu.unicauca.prematricula.sessionbeans;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
@@ -15,7 +16,9 @@ public class ReporteService {
 	
 	public List<PrematriculaEntity> getReporte(){
 		PrematriculaNet prematriculaNet = new PrematriculaNet();
+		
 		List<PrematriculaEntity> result = new ArrayList<PrematriculaEntity>();
+		
 		List<PrematriculaEntity> data = prematriculaNet.getMateriasReporte();
 		
 		result.add(data.get(0));
@@ -33,7 +36,7 @@ public class ReporteService {
 				result.add(d);
 			}
 		}
-		
+		  
 		
 		return result;
 	}

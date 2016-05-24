@@ -14,10 +14,10 @@
 	</f:facet>
 </h:head> 
 <body> 
-	<h:form id="form">	
-			<div style="text-align: center;">
-				<p:dataTable id="Hdatos" var="materia" scrollable="true" scrollHeight="300" resizableColumns="true" 
-					value="#{prematriculaController.materiasReporte}" >
+	<h:form id="form" >	
+			<div style="text-align:left;">
+				<p:dataTable  id="Hdatos" var="materia" scrollable="true" scrollHeight="300" resizableColumns="true" emptyMessage="No se encontraron materias"
+					value="#{prematriculaController.materiasReporte}"  >
 		
 					<f:facet name="header">
 						Informe
@@ -37,7 +37,7 @@
 						<h:outputText value="#{materia.semestre}" />
 					</p:column>
 						
-					<p:column headerText="Numero de Cupos" width="100">
+					<p:column headerText="Nro de Inscritos" width="100">
 						<h:outputText value="#{materia.estudiantes}" />
 					</p:column>
 		
@@ -45,17 +45,19 @@
 			        		<!-- El total de materias es: #{fn:length(prematriculaController.materias_prematricula)}-->
 			    	</f:facet>
 				</p:dataTable>
-				 <h3>Exportar datos</h3>
+				 <h6>Exportar datos</h6>
+				 
                  
                   <h:commandLink>
-                    <!--  <p:graphicImage value="http://hospitaldeconcordia.gov.co/wp-content/uploads/2015/08/excel-icon.png" /> -->
-                      <p:graphicImage value="/resources/images/excel2.png" />
-                     <p:dataExporter type="xls"  target="Hdatos" fileName="myexcel" />
+                     <p:graphicImage value="http://hospitaldeconcordia.gov.co/wp-content/uploads/2015/08/excel-icon.png" />
+                       <!--  <p:graphicImage value="/resources/images/excel2.png" /> -->
+                     <p:dataExporter type="xls"  target="Hdatos" fileName="Informe Prematricula Unicauca" />
                    </h:commandLink>
-          			  <h:commandLink>
-                     <p:graphicImage value="/resources/images/pdf.png" />
-                     <p:dataExporter type="pdf"  target="Hdatos" fileName="myexcel" />
+          			  <h:commandLink><!-- "/resources/images/pdf.png" -->
+                     <p:graphicImage value="http://wwwimages.adobe.com/content/dam/acom/en/legal/images/badges/Adobe_PDF_file_icon_32x32.png" />
+                     <p:dataExporter type="pdf"  target="Hdatos" fileName="Informe Prematricula Unicauca" />
                    </h:commandLink>
+                
                  
 			</div>
 			
