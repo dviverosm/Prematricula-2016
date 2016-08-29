@@ -23,7 +23,8 @@ import co.edu.unicauca.prematriculas.control.PrematriculasControlServiceLocator;
 
 @ManagedBean(name="prematriculaService")
 @ApplicationScoped
-public class PrematriculaService {
+public class PrematriculaService
+{
 	
 	public List<MateriaEntity> getMaterias(String usr, List<MateriaEntity> historia, String oidPrograma){
 		

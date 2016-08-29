@@ -20,7 +20,8 @@ import co.edu.unicauca.prematriculas.control.PrematriculasControlServiceLocator;
 
 @ManagedBean(name="inicioSesionService")
 @ApplicationScoped
-public class InicioSesionService {
+public class InicioSesionService 
+{
 
 	public InicioSesionService(){}
 	

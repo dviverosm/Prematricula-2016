@@ -12,7 +12,8 @@ import co.edu.unicauca.prematricula.entities.PrematriculaBD;
 
 @ManagedBean(name="reporteService")
 @ApplicationScoped
-public class ReporteService {
+public class ReporteService 
+{
 	
 	public List<PrematriculaBD> getReporte(Date date, int oid){
 		String fini = fechaInicio(date);
