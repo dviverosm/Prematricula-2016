@@ -9,7 +9,12 @@ package co.edu.unicauca.prematriculas.control;
 
 public class Estudiante  implements java.io.Serializable 
 {
-    private java.lang.String codigo;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private java.lang.String codigo;
 
     private java.lang.String estado;
 
@@ -232,7 +237,8 @@ public class Estudiante  implements java.io.Serializable
     }
 
     private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
+    @SuppressWarnings("unused")
+	public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Estudiante)) return false;
         Estudiante other = (Estudiante) obj;
         if (obj == null) return false;
@@ -395,7 +401,7 @@ public class Estudiante  implements java.io.Serializable
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
            java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           @SuppressWarnings("rawtypes") java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
@@ -407,7 +413,7 @@ public class Estudiante  implements java.io.Serializable
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
            java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           @SuppressWarnings("rawtypes") java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(

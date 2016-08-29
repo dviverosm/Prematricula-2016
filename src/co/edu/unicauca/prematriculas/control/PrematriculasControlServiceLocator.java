@@ -7,6 +7,9 @@
 
 package co.edu.unicauca.prematriculas.control;
 
+import javax.xml.namespace.QName;
+
+@SuppressWarnings("serial")
 public class PrematriculasControlServiceLocator extends org.apache.axis.client.Service implements co.edu.unicauca.prematriculas.control.PrematriculasControlService 
 {
 
@@ -72,7 +75,8 @@ public class PrematriculasControlServiceLocator extends org.apache.axis.client.S
      * If this service has no port for the given interface,
      * then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+  //modificadose puede quitar esto para dejarlo como antes
+    public java.rmi.Remote getPort(@SuppressWarnings("rawtypes") Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
             if (co.edu.unicauca.prematriculas.control.PrematriculasControl.class.isAssignableFrom(serviceEndpointInterface)) {
                 co.edu.unicauca.prematriculas.control.PrematriculasControlServiceSoapBindingStub _stub = new co.edu.unicauca.prematriculas.control.PrematriculasControlServiceSoapBindingStub(new java.net.URL(PrematriculasControlPort_address), this);
@@ -91,7 +95,8 @@ public class PrematriculasControlServiceLocator extends org.apache.axis.client.S
      * If this service has no port for the given interface,
      * then ServiceException is thrown.
      */
-    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
+  //modificadose puede quitar esto para dejarlo como antes
+    public java.rmi.Remote getPort(javax.xml.namespace.QName portName, @SuppressWarnings("rawtypes") Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         if (portName == null) {
             return getPort(serviceEndpointInterface);
         }
@@ -109,10 +114,12 @@ public class PrematriculasControlServiceLocator extends org.apache.axis.client.S
     public javax.xml.namespace.QName getServiceName() {
         return new javax.xml.namespace.QName("http://control.prematriculas.unicauca.edu.co/", "PrematriculasControlService");
     }
-
-    private java.util.HashSet ports = null;
-
-    public java.util.Iterator getPorts() {
+  //modificadose puede quitar esto para dejarlo como antes
+    
+	private java.util.HashSet<QName> ports = null;
+  //modificadose puede quitar esto para dejarlo como antes
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
             ports.add(new javax.xml.namespace.QName("http://control.prematriculas.unicauca.edu.co/", "PrematriculasControlPort"));

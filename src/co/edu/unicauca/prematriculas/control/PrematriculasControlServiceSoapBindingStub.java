@@ -9,9 +9,13 @@ package co.edu.unicauca.prematriculas.control;
 
 public class PrematriculasControlServiceSoapBindingStub extends org.apache.axis.client.Stub implements co.edu.unicauca.prematriculas.control.PrematriculasControl 
 {
-    private java.util.Vector cachedSerClasses = new java.util.Vector();
-    private java.util.Vector cachedSerQNames = new java.util.Vector();
+    @SuppressWarnings("rawtypes")
+	private java.util.Vector cachedSerClasses = new java.util.Vector();
+    @SuppressWarnings("rawtypes")
+	private java.util.Vector cachedSerQNames = new java.util.Vector();
+    @SuppressWarnings("rawtypes")
     private java.util.Vector cachedSerFactories = new java.util.Vector();
+    @SuppressWarnings("rawtypes")
     private java.util.Vector cachedDeserFactories = new java.util.Vector();
 
     static org.apache.axis.description.OperationDesc [] _operations;
@@ -84,7 +88,8 @@ public class PrematriculasControlServiceSoapBindingStub extends org.apache.axis.
          super.cachedEndpoint = endpointURL;
     }
 
-    public PrematriculasControlServiceSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    @SuppressWarnings({ "rawtypes", "unused", "unchecked" })
+	public PrematriculasControlServiceSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
         if (service == null) {
             super.service = new org.apache.axis.client.Service();
         } else {
@@ -148,7 +153,8 @@ public class PrematriculasControlServiceSoapBindingStub extends org.apache.axis.
 
     }
 
-    protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {
+    @SuppressWarnings("rawtypes")
+	protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {
         try {
             org.apache.axis.client.Call _call = super._createCall();
             if (super.maintainSessionSet) {
