@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/co/edu/unicauca/prematriculas/control/Docente.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/Estudiante.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/Materia.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/MateriaPensum.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/Nota.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/PrematriculasControl.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/PrematriculasControlService.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/PrematriculasControlServiceLocator.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/PrematriculasControlServiceSoapBindingStub.java=UTF-8
+encoding//src/co/edu/unicauca/prematriculas/control/TipoIdentificacion.java=UTF-8
