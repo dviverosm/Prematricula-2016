@@ -9,7 +9,12 @@ package co.edu.unicauca.prematriculas.control;
 
 public class MateriaPensum  implements java.io.Serializable 
 {
-    private java.lang.String codigomateria;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private java.lang.String codigomateria;
 
     private int creditos;
 
@@ -27,7 +32,8 @@ public class MateriaPensum  implements java.io.Serializable
 
     private int semestre;
 
-    public MateriaPensum() {
+    public MateriaPensum() 
+    {
     }
 
     public MateriaPensum(

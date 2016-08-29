@@ -10,7 +10,8 @@ package co.edu.unicauca.prematriculas.control;
 public class PrematriculasControlServiceLocator extends org.apache.axis.client.Service implements co.edu.unicauca.prematriculas.control.PrematriculasControlService 
 {
 
-    public PrematriculasControlServiceLocator() {
+    public PrematriculasControlServiceLocator() 
+    {
     }
 
 

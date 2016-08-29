@@ -16,7 +16,8 @@ public class PrematriculasControlServiceSoapBindingStub extends org.apache.axis.
 
     static org.apache.axis.description.OperationDesc [] _operations;
 
-    static {
+    static 
+    {
         _operations = new org.apache.axis.description.OperationDesc[4];
         _initOperationDesc1();
     }

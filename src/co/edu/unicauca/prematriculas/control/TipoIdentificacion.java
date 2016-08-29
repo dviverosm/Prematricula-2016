@@ -49,7 +49,8 @@ public class TipoIdentificacion implements java.io.Serializable
         return enumeration;
     }
     public static TipoIdentificacion fromString(java.lang.String value)
-          throws java.lang.IllegalArgumentException {
+          throws java.lang.IllegalArgumentException 
+          {
         return fromValue(value);
     }
     public boolean equals(java.lang.Object obj) {return (obj == this);}

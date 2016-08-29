@@ -121,7 +121,8 @@ public class Nota  implements java.io.Serializable
      * 
      * @return anulado
      */
-    public boolean isAnulado() {
+    public boolean isAnulado() 
+    {
         return anulado;
     }
 
