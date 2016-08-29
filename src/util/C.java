@@ -1,6 +1,7 @@
 package util;
 
-public class C {
+public class C 
+{
 	public static final int PROGRAMA_SISTEMAS = 38;
 	public static final int PROGRAMA_ELECTRONICA = 37;
 	public static final int PROGRAMA_AUTOMATICA = 34;
