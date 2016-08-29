@@ -10,11 +10,11 @@ import javax.xml.rpc.ServiceException;
 import org.primefaces.json.JSONException;
 
 import co.edu.unicauca.prematricula.connection.UsuarioNet;
-import co.edu.unicauca.prematricula.entities.MateriaEntity;
+//import co.edu.unicauca.prematricula.entities.MateriaEntity;
 import co.edu.unicauca.prematricula.entities.UsuarioEntity;
 import co.edu.unicauca.prematriculas.control.Docente;
 import co.edu.unicauca.prematriculas.control.Estudiante;
-import co.edu.unicauca.prematriculas.control.Nota;
+//import co.edu.unicauca.prematriculas.control.Nota;
 import co.edu.unicauca.prematriculas.control.PrematriculasControl;
 import co.edu.unicauca.prematriculas.control.PrematriculasControlServiceLocator;
 

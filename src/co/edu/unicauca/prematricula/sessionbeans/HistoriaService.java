@@ -8,9 +8,9 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.xml.rpc.ServiceException;
 
-import org.apache.axis.AxisFault;
+//import org.apache.axis.AxisFault;
 
-import co.edu.unicauca.prematricula.connection.MateriaNet;
+//import co.edu.unicauca.prematricula.connection.MateriaNet;
 import co.edu.unicauca.prematricula.entities.MateriaEntity;
 import co.edu.unicauca.prematriculas.control.*;
 

@@ -11,13 +11,13 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.xml.rpc.ServiceException;
 
-import co.edu.unicauca.prematricula.connection.MateriaNet;
+//import co.edu.unicauca.prematricula.connection.MateriaNet;
 import co.edu.unicauca.prematricula.dao.PrematriculaDao;
 import co.edu.unicauca.prematricula.entities.MateriaEntity;
 import co.edu.unicauca.prematricula.entities.PrematriculaBD;
 import co.edu.unicauca.prematricula.entities.UsuarioEntity;
 import co.edu.unicauca.prematriculas.control.MateriaPensum;
-import co.edu.unicauca.prematriculas.control.Nota;
+//import co.edu.unicauca.prematriculas.control.Nota;
 import co.edu.unicauca.prematriculas.control.PrematriculasControl;
 import co.edu.unicauca.prematriculas.control.PrematriculasControlServiceLocator;
 
