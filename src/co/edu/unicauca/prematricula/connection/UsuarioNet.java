@@ -1,5 +1,6 @@
 package co.edu.unicauca.prematricula.connection;
 
+import org.primefaces.json.JSONException;
 import org.primefaces.json.JSONObject;
 
 import co.edu.unicauca.prematricula.entities.UsuarioEntity;
@@ -12,7 +13,7 @@ public class UsuarioNet {
 		con = new HttpConnection();
 	}
 	
-	public UsuarioEntity startSession(String usr, String pass){
+	public UsuarioEntity startSession(String usr, String pass) throws JSONException{
 		
 		String url = con.getUrlBase() + "usuario/login/"+usr+"/"+pass;
 		UsuarioEntity usuario = new UsuarioEntity();
@@ -25,9 +26,9 @@ public class UsuarioNet {
 			usuario.setPrivilegio(json.getString("gru_nombre"));
 			usuario.setNombre(json.getString("usu_nombre")+" "+json.getString("usu_primer_apellido"));
 			if(!json.isNull("usu_codigo")){
-				usuario.setCodigo(Integer.parseInt(json.getString("usu_codigo")));
+				usuario.setCodigo(json.getString("usu_codigo"));
 			}else{
-				usuario.setCodigo(-1);
+				usuario.setCodigo("");
 			}
 			usuario.setPrimerApellido(json.getString("usu_primer_apellido"));
 			if(!json.isNull("usu_segundo_apellido")){
@@ -60,7 +61,7 @@ public class UsuarioNet {
 		return usuario;
 	}
 	
-	public String programaUsuario(int documento){
+	public String programaUsuario(int documento) throws JSONException{
 		String url = con.getUrlBase() + "usuario/programa/"+documento;
 		
 		String rta = con.requestByGet(url);

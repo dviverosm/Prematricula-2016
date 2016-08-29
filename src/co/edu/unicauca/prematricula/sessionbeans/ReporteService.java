@@ -1,43 +1,52 @@
 package co.edu.unicauca.prematricula.sessionbeans;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import co.edu.unicauca.prematricula.connection.PrematriculaNet;
-import co.edu.unicauca.prematricula.entities.PrematriculaEntity;
+import co.edu.unicauca.prematricula.dao.PrematriculaDao;
+import co.edu.unicauca.prematricula.entities.PrematriculaBD;
 
 @ManagedBean(name="reporteService")
 @ApplicationScoped
 public class ReporteService {
 	
-	public List<PrematriculaEntity> getReporte(){
-		PrematriculaNet prematriculaNet = new PrematriculaNet();
-		
-		List<PrematriculaEntity> result = new ArrayList<PrematriculaEntity>();
-		
-		List<PrematriculaEntity> data = prematriculaNet.getMateriasReporte();
-		
-		result.add(data.get(0));
-		for (PrematriculaEntity d : data) {
-			boolean flag = false;
-			for (PrematriculaEntity r : result) {
-				if(d.getCodigo().equals(r.getCodigo())){
-					flag = true;
-					r.setEstudiantes(r.getEstudiantes()+1);
-					break;
-				}
-			}
-			if(!flag){
-				d.setEstudiantes(1);
-				result.add(d);
-			}
-		}
-		  
+	public List<PrematriculaBD> getReporte(Date date, int oid){
+		String fini = fechaInicio(date);
+		String ffin = fechaFin(date);
+		List<PrematriculaBD> result = PrematriculaDao.readPrematricula(fini, ffin, oid);
 		
 		return result;
+	}
+	
+	private String fechaInicio(Date date){
+		String fecha ="";
+		
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		if(c.get(Calendar.MONTH)<=5){
+			fecha = "01/01/"+c.get(Calendar.YEAR);
+		}else{
+			fecha = "01/07/"+c.get(Calendar.YEAR);
+		}
+		
+		return fecha;
+	}
+	
+	private String fechaFin(Date date){
+		String fecha ="";
+		
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		if(c.get(Calendar.MONTH)<=5){
+			fecha = "30/06/"+c.get(Calendar.YEAR);
+		}else{
+			fecha = "31/12/"+c.get(Calendar.YEAR);
+		}
+		
+		return fecha;
 	}
 }

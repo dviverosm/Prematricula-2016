@@ -4,7 +4,7 @@ public class UsuarioEntity {
 	
 	private int id;
 	private String privilegio;
-	private int codigo;
+	private String codigo;
 	private String username;
 	private String password;
 	private String nombre;
@@ -16,6 +16,7 @@ public class UsuarioEntity {
 	private String estado;
 	private String foto;
 	private String programa;
+	private String oidPrograma;
 	
 	public int getId() {
 		return id;
@@ -29,10 +30,10 @@ public class UsuarioEntity {
 	public void setPrivilegio(String privilegio) {
 		this.privilegio = privilegio;
 	}
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	public String getUsername() {
@@ -101,5 +102,12 @@ public class UsuarioEntity {
 	public void setPrograma(String programa) {
 		this.programa = programa;
 	}
+	public String getOidPrograma() {
+		return oidPrograma;
+	}
+	public void setOidPrograma(String oidPrograma) {
+		this.oidPrograma = oidPrograma;
+	}
+
 	
 }

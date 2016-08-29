@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.primefaces.json.JSONArray;
+import org.primefaces.json.JSONException;
 import org.primefaces.json.JSONObject;
 
 import co.edu.unicauca.prematricula.entities.PrematriculaEntity;
@@ -31,7 +32,7 @@ public class PrematriculaNet {
 		return result;
 	}
 	
-public List<PrematriculaEntity> getMateriasReporte(){
+public List<PrematriculaEntity> getMateriasReporte() throws JSONException{
 		
 		String url = con.getUrlBase() + "prematricula";
 		List<PrematriculaEntity> data = new ArrayList<PrematriculaEntity>();

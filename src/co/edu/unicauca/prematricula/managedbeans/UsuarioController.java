@@ -7,6 +7,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.json.JSONException;
+
 import co.edu.unicauca.prematricula.entities.UsuarioEntity;
 import co.edu.unicauca.prematricula.sessionbeans.InicioSesionService;
 
@@ -37,7 +39,7 @@ public class UsuarioController {
 		usuario = new UsuarioEntity();
 	}
 	
-	public String iniciarSesion(){
+	public String iniciarSesion() throws JSONException{
 		String ruta = "index";
 		
 		UsuarioEntity usu = service.getUsuario(usuario.getUsername(), usuario.getPassword());

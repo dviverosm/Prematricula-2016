@@ -9,11 +9,12 @@ public class MateriaEntity {
 	private String semestre;
 	private int creditos;
 	private String tipoMateria;
-	private float nota;
+	private String nota;
 	private String habilitacion;
-	private float definitiva;
+	private String definitiva;
 	private String periodoAprobada; 
 	private String tipoAprobada;
+	private String oidPrograma;
 	
 	public MateriaEntity(){
 	}
@@ -74,11 +75,11 @@ public class MateriaEntity {
 		this.tipoMateria = tipoMateria;
 	}
 
-	public float getNota() {
+	public String getNota() {
 		return nota;
 	}
 
-	public void setNota(float nota) {
+	public void setNota(String nota) {
 		this.nota = nota;
 	}
 
@@ -90,11 +91,11 @@ public class MateriaEntity {
 		this.habilitacion = habilitacion;
 	}
 
-	public float getDefinitiva() {
+	public String getDefinitiva() {
 		return definitiva;
 	}
 
-	public void setDefinitiva(float definitiva) {
+	public void setDefinitiva(String definitiva) {
 		this.definitiva = definitiva;
 	}
 
@@ -112,6 +113,14 @@ public class MateriaEntity {
 
 	public void setTipoAprobada(String tipoAprobada) {
 		this.tipoAprobada = tipoAprobada;
+	}
+
+	public String getOidPrograma() {
+		return oidPrograma;
+	}
+
+	public void setOidPrograma(String oidPrograma) {
+		this.oidPrograma = oidPrograma;
 	}
 	
 	

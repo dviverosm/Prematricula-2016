@@ -15,6 +15,14 @@
 </h:head> 
 <body> 
 	<h:form id="form" >	
+	
+		<h:panelGrid columns="2" cellpadding="5">
+			<h:outputText value="Seleccione el periodo académico a consultar" />
+			<p:selectOneMenu value="#{prematriculaController.periodoAcademico}">
+				<f:selectItems value="#{prematriculaController.periodosAcademicos}"/>
+			</p:selectOneMenu>
+		</h:panelGrid>
+	
 			<div style="text-align:left;">
 				<p:dataTable  id="Hdatos" var="materia" scrollable="true" scrollHeight="300" resizableColumns="true" emptyMessage="No se encontraron materias"
 					value="#{prematriculaController.materiasReporte}"  >
@@ -24,21 +32,21 @@
 					</f:facet>			      
 		
 					<p:column headerText="Codigo" width="50">
-						<h:outputText value="#{materia.codigo}" />
+						<h:outputText value="#{materia.matCodigo}" />
 					</p:column>
 		
 					<p:column headerText="Materia">
 						
-							<h:outputText value="#{materia.nombre}" />
+							<h:outputText value="#{materia.matNombre}" />
 						
 					</p:column>
 		
 					<p:column headerText="Semestre" width="80">
-						<h:outputText value="#{materia.semestre}" />
+						<h:outputText value="#{materia.matSemestre}" />
 					</p:column>
 						
 					<p:column headerText="Nro de Inscritos" width="100">
-						<h:outputText value="#{materia.estudiantes}" />
+						<h:outputText value="#{materia.preInscritos}" />
 					</p:column>
 		
 				 <f:facet name="footer">
