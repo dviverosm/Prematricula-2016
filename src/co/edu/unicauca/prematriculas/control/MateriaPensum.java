@@ -7,7 +7,8 @@
 
 package co.edu.unicauca.prematriculas.control;
 
-public class MateriaPensum  implements java.io.Serializable {
+public class MateriaPensum  implements java.io.Serializable 
+{
     private java.lang.String codigomateria;
 
     private int creditos;

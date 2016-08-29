@@ -7,7 +7,8 @@
 
 package co.edu.unicauca.prematriculas.control;
 
-public class PrematriculasControlServiceSoapBindingStub extends org.apache.axis.client.Stub implements co.edu.unicauca.prematriculas.control.PrematriculasControl {
+public class PrematriculasControlServiceSoapBindingStub extends org.apache.axis.client.Stub implements co.edu.unicauca.prematriculas.control.PrematriculasControl 
+{
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();

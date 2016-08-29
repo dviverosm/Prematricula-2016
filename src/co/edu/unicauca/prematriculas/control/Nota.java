@@ -7,7 +7,8 @@
 
 package co.edu.unicauca.prematriculas.control;
 
-public class Nota  implements java.io.Serializable {
+public class Nota  implements java.io.Serializable 
+{
     private boolean anulado;
 
     private java.lang.String codigoEstudiante;

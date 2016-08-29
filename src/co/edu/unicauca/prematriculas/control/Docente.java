@@ -7,7 +7,8 @@
 
 package co.edu.unicauca.prematriculas.control;
 
-public class Docente  implements java.io.Serializable {
+public class Docente  implements java.io.Serializable
+{
     private java.lang.String identificacion;
 
     private java.lang.String oidProgramaCoordinado;

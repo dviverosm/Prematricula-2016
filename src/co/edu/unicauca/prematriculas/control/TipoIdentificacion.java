@@ -7,7 +7,8 @@
 
 package co.edu.unicauca.prematriculas.control;
 
-public class TipoIdentificacion implements java.io.Serializable {
+public class TipoIdentificacion implements java.io.Serializable 
+{
     private java.lang.String _value_;
     private static java.util.HashMap _table_ = new java.util.HashMap();
 

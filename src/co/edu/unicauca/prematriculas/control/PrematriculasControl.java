@@ -7,7 +7,8 @@
 
 package co.edu.unicauca.prematriculas.control;
 
-public interface PrematriculasControl extends java.rmi.Remote {
+public interface PrematriculasControl extends java.rmi.Remote 
+{
     public co.edu.unicauca.prematriculas.control.Estudiante cargarDatosEstudiante(java.lang.String arg0) throws java.rmi.RemoteException;
     public co.edu.unicauca.prematriculas.control.Nota[] cargarHistoriaAcademica(java.lang.String arg0) throws java.rmi.RemoteException;
     public co.edu.unicauca.prematriculas.control.MateriaPensum[] cargarPensum(java.lang.String arg0) throws java.rmi.RemoteException;

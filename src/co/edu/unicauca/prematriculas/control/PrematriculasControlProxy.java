@@ -1,6 +1,7 @@
 package co.edu.unicauca.prematriculas.control;
 
-public class PrematriculasControlProxy implements co.edu.unicauca.prematriculas.control.PrematriculasControl {
+public class PrematriculasControlProxy implements co.edu.unicauca.prematriculas.control.PrematriculasControl 
+{
   private String _endpoint = null;
   private co.edu.unicauca.prematriculas.control.PrematriculasControl prematriculasControl = null;
   

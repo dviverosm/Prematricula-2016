@@ -7,7 +7,8 @@
 
 package co.edu.unicauca.prematriculas.control;
 
-public interface PrematriculasControlService extends javax.xml.rpc.Service {
+public interface PrematriculasControlService extends javax.xml.rpc.Service 
+{
     public java.lang.String getPrematriculasControlPortAddress();
 
     public co.edu.unicauca.prematriculas.control.PrematriculasControl getPrematriculasControlPort() throws javax.xml.rpc.ServiceException;
