@@ -16,7 +16,8 @@ import co.edu.unicauca.prematriculas.control.*;
 
 @ManagedBean(name="historiaService")
 @ApplicationScoped
-public class HistoriaService {
+public class HistoriaService
+{
 	
 	public List<MateriaEntity> getMaterias(String usr){	
 		
