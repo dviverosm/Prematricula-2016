@@ -24,7 +24,8 @@ public class HistoriaService {
 		PrematriculasControlServiceLocator locator = new PrematriculasControlServiceLocator();
 		try {
 			PrematriculasControl wservice = locator.getPrematriculasControlPort();
-			try {
+			try 
+			{
 				String arg = usr;
 				Nota[] data = wservice.cargarHistoriaAcademica(arg);
 				for(int i=0; i<data.length; i++){
